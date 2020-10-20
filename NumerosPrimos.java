@@ -16,18 +16,10 @@ public class NumerosPrimos {
 	private static long getSumPrime(int maxNum) {
 		long sumPrime = 0;
 		for (int i = 2; i < maxNum; i++) {
-			boolean isPrime = true;
-			for (int j = 2; j < i; j++) {
-				int rest = i % j;
-				if (rest == 0) {
-					isPrime = false;
-					break;
-				}
-			}
-			if (isPrime) {
+			if (isPrime(i)) {
 				//System.out.println("Es primo: " + i);
 				sumPrime += i;
-			}
+            }
 		}
 		return sumPrime;
 		
@@ -45,15 +37,7 @@ public class NumerosPrimos {
 		int contPrimes = 1;
 		
 		while (contPrimes <= maxNum) {
-			boolean isPrime = true;
-			for (int j = 2; j < i; j++) {
-				int rest = i % j;
-				if (rest == 0) {
-					isPrime = false;
-					break;
-				}
-			}
-			if (isPrime) {
+			if (isPrime(i)) {
 				//System.out.println("Es primo: " + i);
 				contPrimes++;
 				sumPrime += i;
@@ -61,6 +45,18 @@ public class NumerosPrimos {
 			i++;
 		}
 		return sumPrime;
-	}
+    }
+    
+    private static boolean isPrime(int num) {
+        boolean isPrime = true;
+        for (int j = 2; j < num; j++) {
+            int rest = num % j;
+            if (rest == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        return isPrime;    
+    }
 
 }
