@@ -1,7 +1,7 @@
 public class NumerosPrimos {
 
 	public static void main(String[] args) {
-        int numMax = 50;
+        final int numMax = 50;
 
 		System.out.println("La suma de los números primos que hay entre los 50 primeros números: "  + getSumPrime(numMax));
 		System.out.println("La suma de los 50 primeros números primos: "  + getSumPrime50(numMax));
@@ -50,8 +50,7 @@ public class NumerosPrimos {
     private static boolean isPrime(int num) {
         boolean isPrime = true;
         for (int j = 2; j < num; j++) {
-            int rest = num % j;
-            if (rest == 0) {
+            if (num % j == 0) {
                 isPrime = false;
                 break;
             }
