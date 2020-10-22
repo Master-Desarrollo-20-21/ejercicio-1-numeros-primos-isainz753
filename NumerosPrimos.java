@@ -46,7 +46,14 @@ public class NumerosPrimos {
 		}
 		return sumPrime;
     }
-    
+	
+
+	/**
+	 * Versión Inicial
+	 * 
+	 * @param num
+	 * @return
+	 */
     private static boolean isPrime(int num) {
         boolean isPrime = true;
         for (int j = 2; j < num; j++) {
@@ -56,6 +63,21 @@ public class NumerosPrimos {
             }
         }
         return isPrime;    
+	}
+	
+	/**
+	 * Versión Reducida
+	 * 
+	 * @param num
+	 * @return
+	 */
+	private static boolean isPrimeReduce(int num) {
+        for (int j = 2; j < num; j++) {
+            if (num % j == 0) {
+                return false;
+            }
+        }
+        return true;    
     }
 
 }
